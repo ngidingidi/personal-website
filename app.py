@@ -11,6 +11,13 @@ def home():
     """
     return render_template('home.html')
 
+@app.route("/resume")
+def resume():
+    """
+    Returns resume
+    """
+    return render_template('resume.html')
+
 @app.route("/<path:file_path>")
 def send_file(file_path):
     """
