@@ -12,20 +12,50 @@
 </head>
 <body>
     <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="{{url_for('home')}}">Sicelo Masango</a>
-          </div>
+        <div class="container" id="navbar-encapsulate">
           <ul class="nav navbar-nav">
-            <li><a href="{{url_for('resume')}}">RESUME</a></li>
-            <li><a href="#">BIO</a></li>
-            <li><a href="#">PROJECTS</a></li>
+            <li><a class="nav__link" href="{{url_for('home')}}">SICELO MASANGO</a></li>
+            <li><a class="nav__link" href="{{url_for('resume')}}">RESUME</a></li>
+            <li><a class="nav__link" href="https://www.linkedin.com/in/sicelomasango/">
+              <img src="https://img.icons8.com/material-outlined/24/000000/linkedin--v1.png" alt="LOGO"/></a></li>
           </ul>
+          <a class="navbar-brand ml-auto navbar-right" href="https://chemistry.northwestern.edu/" style="padding: 0%;">
+            <img src="{{ url_for('send_file', file_path='img/nu_logo.png') }}" alt="LOGO"/>
+          </a>
         </div>
     </nav>
 
     {% block content%}
     {% endblock%}
 
+    <br>
+    <footer id="footer">
+        <div class="col-6">
+          <p class="text-center">Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script>
+            - for questions, please contact sicelomasango@gmail.com
+          </p>
+        </div> 
+    </footer>
+
 </body>
 </html>
+
+<script>
+  // Clever way of highlighting active current menu tab
+
+const header = document.getElementById("navbar-encapsulate");
+const links = header.getElementsByClassName("nav__link");
+//console.log(links)
+
+let current = 0;
+for (let i = 0; i < links.length; i++) {
+  //console.log(document.URL)
+    if (links[i].href === document.URL) {
+        current = i;
+        links[current].className = 'current';
+    }
+}
+
+
+</script>

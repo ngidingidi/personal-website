@@ -1,8 +1,23 @@
 .navbar {
-    background-color: #e7d6d6;
-    padding: 0px;
+    background-color: #CDCDCD;
+    padding-bottom: 2%;
+    padding-top: 2%;
     margin-left: 0%;
     margin-right: 0%;
+  }
+
+  .navbar-nav {
+    font-weight: bold;
+    font-family: 'QuickSand', sans-serif;
+    font-size: 1.5em;
+  }
+
+  .navbar .current {
+    color: black !important;
+  }
+
+  .navbar .nav__link {
+    color: grey !important;
   }
   
   h1 {
@@ -25,13 +40,16 @@
     font-weight: 700;
     text-transform: uppercase;
   }
+
+  h3 {
+    font-family: 'Book Antiqua';
+    font-size: 14pt;
+  }
   
   p {
     margin-bottom: 20px;
-    font-family: Averta, sans-serif;
-    color: rgb(26, 25, 25);
-    font-size: 22px;
-    line-height: 30px;
+    font-family: 'Book Antiqua';
+    font-size: 12pt;
   }
   
   a {
@@ -44,6 +62,7 @@
   a:hover {
     border-bottom-color: #1d2330;
     color: #1d2330;
+    text-decoration: none;
   }
   
   a:focus {
@@ -61,3 +80,20 @@
     float: left;
     border-bottom: 0px none #000;
   }
+
+  .MsoListBulletCxSpFirst {
+    margin-bottom: 0;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: table;
+}
+
+#footer {
+    background-color: lightslategray;
+    display: table-row;
+    height: 0;
+}
