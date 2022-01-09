@@ -11,20 +11,78 @@
 
             <p>
                 I have a passion for using data to drive decision making.
-            </p>
-            
-            <p>My favorite programming languages are 
+                My favorite programming languages are 
                 <a href="https://www.w3schools.com/python" style="color:#659DBD;">Python</a> and
                 <a href="https://www.w3schools.com/js" style="color:#659DBD;">JavaScript</a>.
-                <br><br>
                 Please check out my 
-                <a href="{{ url_for('resume') }}" style="color:#659DBD;">resume</a> and 
+                <a href="{{ url_for('resume') }}" style="color:#659DBD;">resume</a>, 
                 <a href="https://www.linkedin.com/in/sicelomasango/" style="color:#659DBD;">linkedin</a> and 
                 <a href="https://github.com/ngidingidi" style="color:#659DBD;">github</a> profile
                 to learn more about my educational background, skills, and professional experience.
             </p>
         </div>
-</div>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="/img/python-logo.jpg" style="width: 50%; height: 80%;">
+            </div>
+    
+            <div class="mySlides fade">
+                <img src="/img/js-logo.jpg" style="width: 50%; height: 80%;">
+            </div>
+    
+            <div class="mySlides fade">
+                <img src="/img/sql-logo.png" style="width: 50%; height: 80%;">
+            </div>
+        
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+</div>    
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        
+        slides[slideIndex - 1].style.display = "block";
+    }
+
+
+    // Auto Slide
+
+    slideIndex = 0;
+    showAutoSlides();
+
+    function showAutoSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showAutoSlides, 3000); // Change image every 3 seconds
+    }
+</script>
 
 
 {% endblock %}
